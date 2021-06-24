@@ -15,7 +15,8 @@ public class ProductRepository {
     }
 
     public Product[] findAll() {
-        return items;
+        Product[] it = items;
+        return it;
     }
 
     public void removeById(int id) {

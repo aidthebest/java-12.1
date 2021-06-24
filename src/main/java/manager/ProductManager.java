@@ -23,7 +23,7 @@ public class ProductManager {
         return repository.findAll();
     }
 
-    public Product[] searcyBy(String text) {
+    public Product[] searhcyBy(String text) {
         Product[] result = new Product[0];
         for (Product product : repository.findAll()) {
             if (matches(product, text)) {
@@ -39,7 +39,7 @@ public class ProductManager {
     public boolean matches(Product product, String search) {
         if (product instanceof Book) {
             Book book = (Book) product;
-            if (((Book) product).getAuthor().contains(search)) {
+            if ((book).getAuthor().contains(search)) {
                 return true;
             }
             return product.getName().contains(search);
@@ -48,7 +48,7 @@ public class ProductManager {
 
         if (product instanceof Smartphone) {
             Smartphone smart = (Smartphone) product;
-            if (((Smartphone) product).getProducer().contains(search)) {
+            if ((smart).getProducer().contains(search)) {
                 return true;
             }
             return product.getName().contains(search);
