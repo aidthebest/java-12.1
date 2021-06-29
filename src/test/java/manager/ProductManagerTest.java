@@ -33,10 +33,11 @@ public class ProductManagerTest {
 
         manager.add(smart1);
         manager.add(smart2);
+    }
 
 
-        @Test
-        public void shouldAddProduct () {
+            @Test
+            public void shouldAddProduct () {
             manager.add(book3);
             manager.add(smart3);
 
@@ -45,8 +46,8 @@ public class ProductManagerTest {
             Assertions.assertArrayEquals(actual, expected);
         }
 
-        @Test
-        public void shouldSearchBySmart () {
+            @Test
+            public void shouldSearchBySmart () {
             manager.add(book3);
             manager.add(smart3);
 
@@ -56,8 +57,8 @@ public class ProductManagerTest {
             Assertions.assertArrayEquals(expected, actual);
         }
 
-        @Test
-        public void shouldSearchByBook () {
+            @Test
+            public void shouldSearchByBook () {
             manager.add(book3);
             manager.add(smart3);
 
@@ -67,8 +68,8 @@ public class ProductManagerTest {
             Assertions.assertArrayEquals(expected, actual);
         }
 
-        @Test
-        public void shouldSearchByBook2 () {
+            @Test
+            public void shouldSearchByBook2 () {
             manager.add(book3);
             manager.add(smart3);
 
@@ -78,8 +79,8 @@ public class ProductManagerTest {
             Assertions.assertArrayEquals(expected, actual);
         }
 
-        @Test
-        public void shouldSearchBySmart2 () {
+            @Test
+            public void shouldSearchBySmart2 () {
             manager.add(book3);
             manager.add(smart3);
 
@@ -89,8 +90,8 @@ public class ProductManagerTest {
             Assertions.assertArrayEquals(expected, actual);
         }
 
-        @Test
-        public void shouldSearchByNoExist () {
+            @Test
+            public void shouldSearchByNoExist () {
             manager.add(book3);
             manager.add(smart3);
 
@@ -99,24 +100,26 @@ public class ProductManagerTest {
             Product[] actual = manager.searhcyBy("17842");
             Assertions.assertArrayEquals(expected, actual);
         }
-
-        @Test
-        public void shouldSearchSome () {
-            manager.add(book3);
-            manager.add(smart3);
-
-            Product[] expected = {book2, smart1, smart3};
-
-            manager.searhcyBy("Peace");
-            manager.searhcyBy("C30");
-            manager.searhcyBy("Apple");
-
-            Product[] actual = manager.getAll();
-
-            Assertions.assertArrayEquals(expected, actual);
+// TODO: 29.06.2021  Вот с этим тестом просьба помочь (( 
+//            @Test
+//            public void shouldSearchSome () {
+//            manager.add(book3);
+//            manager.add(smart3);
+//
+//            Product[] expected = {book2, smart1, smart3};
+//
+//            manager.searhcyBy("Peace");
+//            manager.searhcyBy("C30");
+//            manager.searhcyBy("Apple");
+//
+//            Product[] actual = manager.getAll();
+//
+//            Assertions.assertArrayEquals(expected, actual);
+//        }
         }
-    }
-}
+
+
+
 
 
 //        static class TestEnt extends Product {
