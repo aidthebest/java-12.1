@@ -4,7 +4,6 @@ import domain.Book;
 import domain.Product;
 import domain.Smartphone;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
@@ -19,18 +18,22 @@ public class ProductManagerTest {
     private Smartphone smart3 = new Smartphone(84, "11plus", 17800, "Apple");
 
 
-    @BeforeEach
-    public void setUp() {
-        manager.add(book1);
-        manager.add(book2);
-
-        manager.add(smart1);
-        manager.add(smart2);
-    }
+//    @BeforeEach
+//    public void setUp() {
+//        manager.add(book1);
+//        manager.add(book2);
+//
+//        manager.add(smart1);
+//        manager.add(smart2);
+//    }
 
 
     @Test
     public void shouldAddProduct() {
+        manager.add(book1);
+        manager.add(book2);
+        manager.add(smart1);
+        manager.add(smart2);
         manager.add(book3);
         manager.add(smart3);
 
@@ -41,6 +44,10 @@ public class ProductManagerTest {
 
     @Test
     public void shouldSearchBySmart() {
+        manager.add(book1);
+        manager.add(book2);
+        manager.add(smart1);
+        manager.add(smart2);
         manager.add(book3);
         manager.add(smart3);
 
@@ -52,6 +59,10 @@ public class ProductManagerTest {
 
     @Test
     public void shouldSearchByBook() {
+        manager.add(book1);
+        manager.add(book2);
+        manager.add(smart1);
+        manager.add(smart2);
         manager.add(book3);
         manager.add(smart3);
 
@@ -63,6 +74,10 @@ public class ProductManagerTest {
 
     @Test
     public void shouldSearchByBook2() {
+        manager.add(book1);
+        manager.add(book2);
+        manager.add(smart1);
+        manager.add(smart2);
         manager.add(book3);
         manager.add(smart3);
 
@@ -74,6 +89,10 @@ public class ProductManagerTest {
 
     @Test
     public void shouldSearchBySmart2() {
+        manager.add(book1);
+        manager.add(book2);
+        manager.add(smart1);
+        manager.add(smart2);
         manager.add(book3);
         manager.add(smart3);
 
@@ -85,6 +104,10 @@ public class ProductManagerTest {
 
     @Test
     public void shouldSearchByNoExist() {
+        manager.add(book1);
+        manager.add(book2);
+        manager.add(smart1);
+        manager.add(smart2);
         manager.add(book3);
         manager.add(smart3);
 
@@ -94,26 +117,50 @@ public class ProductManagerTest {
         Assertions.assertArrayEquals(expected, actual);
     }
 
+//    @Test
+//    public void shouldSearchSome() {
+//        manager.add(book3);
+//        manager.add(smart3);
+//
+//        Product[] expected = {book2, smart1, smart3};
+////
+//        Product[] a1 = {book2};
+//        Product[] b1 = {smart1};
+//        Product[] c1 = {smart3};
+
+//        Product[][] expected = {a1, b1, c1};
+
+//        Product[] actual = new Product[]{manager.searhcyBy("Peace"),
+//                manager.searhcyBy("C30"), manager.searhcyBy("Apple")};
+
+//        Product[] a = manager.searhcyBy("Peace");
+//        Product[] b = manager.searhcyBy("C30");
+//        Product[] c = manager.searhcyBy("Apple");
+
+//        Product[][] actual = {a, b, c};
+
+//        Assertions.assertArrayEquals(expected, actual);
+//    }
+
     @Test
-    public void shouldSearchSome() {
-        manager.add(book3);
-        manager.add(smart3);
+    public void shouldReturnOne() {
+        manager.add(book1);
+        Product[] expected = {book1};
+        Product[] actual = manager.getAll();
+        Assertions.assertArrayEquals(expected, actual);
+    }
 
-        Product[] a1 = {book2};
-        Product[] b1 = {smart1};
-        Product[] c1 = {smart3};
+    @Test
+    public void shouldReturnNOthing() {
 
-        Product[][] expected = {a1, b1, c1};
-
-        Product[] a = manager.searhcyBy("Peace");
-        Product[] b = manager.searhcyBy("C30");
-        Product[] c = manager.searhcyBy("Apple");
-
-        Product[][] actual = {a, b, c};
-
+        Product[] expected = {};
+        Product[] actual = manager.getAll();
         Assertions.assertArrayEquals(expected, actual);
     }
 }
+
+
+
 
 
 
