@@ -55,7 +55,7 @@ public class ProductManagerTest {
 
 
         Product[] expected = {smart1};
-        Product[] actual = manager.searhcBy("Samsung");
+        Product[] actual = manager.searchBy("Samsung");
         Assertions.assertArrayEquals(expected, actual);
     }
 
@@ -70,7 +70,7 @@ public class ProductManagerTest {
 
 
         Product[] expected = {book3};
-        Product[] actual = manager.searhcBy("HowTocook");
+        Product[] actual = manager.searchBy("HowTocook");
         Assertions.assertArrayEquals(expected, actual);
     }
 
@@ -85,7 +85,7 @@ public class ProductManagerTest {
 
 
         Product[] expected = {book1};
-        Product[] actual = manager.searhcBy("SomeBodyGuy");
+        Product[] actual = manager.searchBy("SomeBodyGuy");
         Assertions.assertArrayEquals(expected, actual);
     }
 
@@ -100,7 +100,7 @@ public class ProductManagerTest {
 
 
         Product[] expected = {smart2};
-        Product[] actual = manager.searhcBy("3110");
+        Product[] actual = manager.searchBy("3110");
         Assertions.assertArrayEquals(expected, actual);
     }
 
@@ -115,7 +115,7 @@ public class ProductManagerTest {
 
 
         Product[] expected = {};
-        Product[] actual = manager.searhcBy("17842");
+        Product[] actual = manager.searchBy("17842");
         Assertions.assertArrayEquals(expected, actual);
     }
 
@@ -171,7 +171,7 @@ public class ProductManagerTest {
         manager.add(book4);
 
         Product[] expected = {book3, book4};
-        Product[] actual = manager.searhcBy("BadGuy");
+        Product[] actual = manager.searchBy("BadGuy");
         Assertions.assertArrayEquals(expected, actual);
     }
 }
