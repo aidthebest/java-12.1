@@ -23,7 +23,7 @@ public class ProductManager {
         return repository.findAll();
     }
 
-    public Product[] searhcyBy(String text) {
+    public Product[] searhcBy(String text) {
         Product[] result = new Product[0];
         for (Product product : repository.findAll()) {
             if (matches(product, text)) {

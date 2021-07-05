@@ -12,6 +12,8 @@ public class ProductManagerTest {
     private Book book1 = new Book(11, "WAR", 2500, "SomeBodyGuy");
     private Book book2 = new Book(49, "Peace", 1748, "AnotherGuy");
     private Book book3 = new Book(19, "HowTocook", 2500, "BadGuy");
+    private Book book4 = new Book(22, "BeforeCook", 2500, "BadGuy");
+
 
     private Smartphone smart1 = new Smartphone(67, "C30", 17800, "Samsung");
     private Smartphone smart2 = new Smartphone(57, "3110", 74000, "Nokia");
@@ -53,7 +55,7 @@ public class ProductManagerTest {
 
 
         Product[] expected = {smart1};
-        Product[] actual = manager.searhcyBy("Samsung");
+        Product[] actual = manager.searhcBy("Samsung");
         Assertions.assertArrayEquals(expected, actual);
     }
 
@@ -68,7 +70,7 @@ public class ProductManagerTest {
 
 
         Product[] expected = {book3};
-        Product[] actual = manager.searhcyBy("HowTocook");
+        Product[] actual = manager.searhcBy("HowTocook");
         Assertions.assertArrayEquals(expected, actual);
     }
 
@@ -83,7 +85,7 @@ public class ProductManagerTest {
 
 
         Product[] expected = {book1};
-        Product[] actual = manager.searhcyBy("SomeBodyGuy");
+        Product[] actual = manager.searhcBy("SomeBodyGuy");
         Assertions.assertArrayEquals(expected, actual);
     }
 
@@ -98,7 +100,7 @@ public class ProductManagerTest {
 
 
         Product[] expected = {smart2};
-        Product[] actual = manager.searhcyBy("3110");
+        Product[] actual = manager.searhcBy("3110");
         Assertions.assertArrayEquals(expected, actual);
     }
 
@@ -113,7 +115,7 @@ public class ProductManagerTest {
 
 
         Product[] expected = {};
-        Product[] actual = manager.searhcyBy("17842");
+        Product[] actual = manager.searhcBy("17842");
         Assertions.assertArrayEquals(expected, actual);
     }
 
@@ -155,6 +157,21 @@ public class ProductManagerTest {
 
         Product[] expected = {};
         Product[] actual = manager.getAll();
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldReturnTwo() {
+        manager.add(book1);
+        manager.add(book2);
+        manager.add(smart1);
+        manager.add(smart2);
+        manager.add(book3);
+        manager.add(smart3);
+        manager.add(book4);
+
+        Product[] expected = {book3, book4};
+        Product[] actual = manager.searhcBy("BadGuy");
         Assertions.assertArrayEquals(expected, actual);
     }
 }
